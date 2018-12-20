@@ -1,3 +1,5 @@
+package JcoServer;
+
 import org.apache.log4j.Logger;
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.logging.LoggingFeature.Verbosity;

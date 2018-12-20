@@ -1,3 +1,5 @@
+package IDocServer;
+
 import com.sap.conn.idoc.*;
 
 import java.io.*;

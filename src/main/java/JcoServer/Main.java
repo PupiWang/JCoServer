@@ -1,3 +1,5 @@
+package JcoServer;
+
 import com.sap.conn.jco.*;
 import com.sap.conn.jco.ext.DestinationDataProvider;
 

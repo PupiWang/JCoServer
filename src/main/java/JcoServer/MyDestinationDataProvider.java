@@ -1,12 +1,15 @@
+package JcoServer;
+
+import com.sap.conn.jco.ext.DestinationDataEventListener;
+import com.sap.conn.jco.ext.DestinationDataProvider;
 import com.sap.conn.jco.ext.Environment;
-import com.sap.conn.jco.ext.ServerDataEventListener;
-import com.sap.conn.jco.ext.ServerDataProvider;
 
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-public class MyServerDataProvider implements ServerDataProvider {
+
+public class MyDestinationDataProvider implements DestinationDataProvider {
 
   private static Logger logger = Logger.getLogger(MyDestinationDataProvider.class);
 
@@ -19,14 +22,14 @@ public class MyServerDataProvider implements ServerDataProvider {
   /**
    * Initializes this instance with the given {@code properties}.
    * Performs a self-registration in case no instance of a
-   * {@link MyServerDataProvider} is registered so far
-   * (see {@link #register(MyServerDataProvider)}).
+   * {@link MyDestinationDataProvider} is registered so far
+   * (see {@link #register(MyDestinationDataProvider)}).
    *
    * @param properties
    *            the {@link #properties}
    *
    */
-  public MyServerDataProvider(Properties properties) {
+  public MyDestinationDataProvider(Properties properties) {
     super();
     this.properties = properties;
     // Try to register this instance (in case there is not already another
@@ -40,31 +43,31 @@ public class MyServerDataProvider implements ServerDataProvider {
   private static boolean registered = false;
 
   /**
-   * Registers the given {@code provider} as server data provider at the
+   * Registers the given {@code provider} as destination data provider at the
    * {@link Environment}.
    *
    * @param provider
-   *            the server data provider to register
+   *            the destination data provider to register
    */
-  private static void register(MyServerDataProvider provider) {
+  private static void register(MyDestinationDataProvider provider) {
     // Check if a registration has already been performed.
     if (registered == false) {
-      logger.info("There is no " + MyServerDataProvider.class.getSimpleName()
-          + " registered so far. Registering a new instance.");
+//      logger.info("There is no " + JcoServer.MyDestinationDataProvider.class.getSimpleName()
+//          + " registered so far. Registering a new instance.");
       // Register the destination data provider.
-      Environment.registerServerDataProvider(provider);
+      Environment.registerDestinationDataProvider(provider);
       registered = true;
     }
   }
 
   @Override
-  public Properties getServerProperties(String serverName) {
-    logger.info("Providing server properties for server '"+serverName+"' using the specified properties");
+  public Properties getDestinationProperties(String destinationName) {
+    logger.info("Providing destination properties for destination '"+destinationName+"' using the specified properties");
     return properties;
   }
 
   @Override
-  public void setServerDataEventListener(ServerDataEventListener listener) {
+  public void setDestinationDataEventListener(DestinationDataEventListener listener) {
   }
 
   @Override

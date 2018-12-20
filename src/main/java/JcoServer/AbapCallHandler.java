@@ -1,3 +1,5 @@
+package JcoServer;
+
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.server.JCoServerContext;
 import com.sap.conn.jco.server.JCoServerFunctionHandler;
@@ -44,7 +46,7 @@ public class AbapCallHandler implements JCoServerFunctionHandler {
     // Get the URI provided from Abap.
     String uri = function.getImportParameterList().getString("IV_URI");
 
-//    HttpCaller main = new HttpCaller();
+//    JcoServer.HttpCaller main = new JcoServer.HttpCaller();
 //    main.initializeSslContext();
 //    main.initializeClient();
     String payload = null;

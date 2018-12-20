@@ -1,3 +1,5 @@
+package JcoServer;
+
 import com.sap.conn.jco.JCoException;
 import com.sap.conn.jco.ext.ServerDataProvider;
 import com.sap.conn.jco.server.*;

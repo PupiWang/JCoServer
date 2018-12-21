@@ -1,0 +1,5 @@
+jco.server.connection_count=2
+jco.server.gwhost=sap752sp01.southeastasia.cloudapp.azure.com
+jco.server.progid=JCO_SERVER
+jco.server.gwserv=sapgw00
+jco.server.repository_destination=NPL

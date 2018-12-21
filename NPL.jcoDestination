@@ -1,0 +1,11 @@
+jco.client.type=3
+jco.client.client=001
+jco.client.user=TESTID01
+jco.client.passwd=v}rz5V/xP9w}]S_u:Nu{`5$1=_Y/K{4/X$=W?pp`7{#[{$wk
+jco.client.lang=en
+jco.client.mshost=sap752sp01.southeastasia.cloudapp.azure.com
+jco.client.r3name=vhcalnplci
+jco.client.group=PUBLIC
+jco.client.trace=0
+jco.client.sysnr=00
+jco.destination.repository_destination=NPL
